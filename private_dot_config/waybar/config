@@ -1,0 +1,178 @@
+//====================================================================================================//
+// Waybar Configuration File                                                                          //
+//----------------------------------------------------------------------------------------------------//
+// Purpose: Creates a minimalistic (yet functional) waybar at                                         //
+// the top of the screen.                                                                             //
+// themes and colors, set the wallpaper, and more.                                                    //
+//                                                                                                    //
+// License: Creative Commons Attribution 4.0 International                                            //
+//                                                                                                    //
+// Credit:                                                                                            //
+// Battery section adapted from:                                                                      //
+// https://github.com/Egosummiki/dotfiles/blob/master/waybar/config                                   //
+//                                                                                                    //
+// Pipewire audio adapted from:                                                                       //
+// https://www.reddit.com/r/swaywm/comments/sks343/pwvolume_pipewire_volume_control_and_waybar_module //
+//====================================================================================================//
+[
+    {
+        "name": "topbar",
+        "layer": "top",
+        "position": "top",
+        "height": 36,
+        "spacing": 4,
+        "margin-top": 0,
+        "margin-bottom": 0,
+
+        // Choose the order of the modules
+        "modules-center": ["sway/window"],
+        "modules-left": [ "custom/audio","memory","cpu","disk","temperature","backlight","network"],
+        "modules-right": [ "bluetooth","battery","clock", "custom/poweroff"],
+
+        // Configuration for individual modules
+         "sway/window": {
+             "format": "{} ",
+             "on-click": "swaymsg kill"
+        },        
+         "sway/workspaces": {
+             "disable-scroll": true,
+             "all-outputs": false,
+             "format": "{name}",
+        },
+
+        "tray": {
+            "icon-size": 18,
+            "spacing": 10,
+        },
+
+        "cpu": {
+            "format": " {usage}% ",
+            "tooltip": false
+        },
+
+        "disk": {
+            "format": " {}% ",
+            "tooltip-format": "{used} / {total} used"
+        },
+
+        "memory": {
+            "format": " {}% ",
+            "tooltip-format": "{used:0.1f}G / {total:0.1f}G used"
+        },
+
+        "temperature": {
+            "critical-threshold": 80,
+            "format": "{icon} {temperatureC}°C ",
+            "format-icons": ["", "", "", "", ""]
+        },
+
+        "clock": {
+            "timezone": "America/Detroit",
+            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+            "format-alt": "{:%Y-%m-%d}",
+        },
+
+        "battery": {
+            "states": {
+                // "good": 95,
+                "warning": 30,
+                "critical": 15,
+            },
+            "format": "{icon} {capacity}%",
+            "format-charging": "⚡{capacity}%",
+            "format-plugged": " {capacity}%",
+            "format-alt": "{time} {icon}",
+            // "format-good": "", // An empty format will hide the module
+            // "format-full": "",
+            "format-icons": ["", "", "", "", ""],
+        },
+
+        "bluetooth": {
+            "format": "",
+            "format-disabled": "NO",
+            "format-off": "NO",
+            "format-connected": "",
+            "format-connected-battery": "󰂱 {device_battery_percentage}󰏰",
+            "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+            "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+            "on-click": "~/rofi-bluetooth/rofi-bluetooth",
+            "on-click-right": "rfkill toggle bluetooth"
+        },
+
+        "network": {
+            // "interface": "wlp2*", // (Optional) To force the use of this interface
+            "format-wifi": " {signalStrength}%",
+            "format-ethernet": "Connected  ",
+            "tooltip-format": "{ifname}: {gwaddr}",
+            "format-linked": "{ifname} (No IP)",
+            "format-disconnected": "Disconnected ⚠",
+            "format-alt": "{ifname}: {ipaddr}/{cidr}",
+            "on-click-right": "gnome-control-center wifi",
+        },
+
+        "backlight": {
+            //"device": "acpi_video1",
+            "format": "{icon} {percent}%",
+            "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+        },
+
+        "custom/audio": {
+            "format": "{}",
+            "signal": 8,
+            "interval": "once",
+            "exec": "/home/grnch/.config/sway/audio.sh",
+            "on-click": "pavucontrol",
+        },
+
+        "custom/poweroff": {
+            "tooltip": false,
+            "format": "",
+            "on-click": "bash $HOME/.config/waybar/scripts/poweroff.sh"
+        },
+
+        "custom/hostname": {
+            "format": "{}",
+            "exec": "/usr/bin/hostname -f",
+            "interval": "once",
+            "on-click": " /usr/bin/alacritty -e /usr/bin/htop",
+        },
+    },
+    {
+        "name": "bottombar",
+        "layer": "top",
+        "position": "bottom",
+        "height": 30,
+        "modules-left": ["sway/scratchpad","tray"],
+        "modules-center": ["wlr/taskbar"],
+        "modules-right": ["sway/workspaces", "sway/mode"],
+        "tray": {
+            "icon-size": 13,
+            "spacing": 10
+        },
+
+        "sway/scratchpad": {
+            "format": "{icon} {count}",
+            "show-empty": false,
+            "format-icons": ["", ""],
+            "tooltip": true,
+            "tooptip-format": "{app}: {title}",
+        },
+
+        "wlr/taskbar": {
+            "format": "{icon} {name}",
+            "icon-size": 13,
+            "tooltip": false,
+            "on-click": "activate",
+            "on-click-right": "close",
+            "app_ids-mapping": {
+                "gnome-terminal-server": "org.gnome.Terminal"
+            }
+        },
+        
+        "sway/mode": {
+            "format": "<span style=\"italic\">{}</span>"
+        }
+    }
+]

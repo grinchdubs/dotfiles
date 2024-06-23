@@ -1,0 +1,99 @@
+//====================================================================================================//
+// Waybar Configuration File                                                                          //
+//----------------------------------------------------------------------------------------------------//
+// Purpose: Creates a minimalistic (yet functional) waybar at                                         //
+// the top of the screen.                                                                             //
+// themes and colors, set the wallpaper, and more.                                                    //
+//                                                                                                    //
+// License: Creative Commons Attribution 4.0 International                                            //
+//                                                                                                    //
+// Credit:                                                                                            //
+// Battery section adapted from:                                                                      //
+// https://github.com/Egosummiki/dotfiles/blob/master/waybar/config                                   //
+//                                                                                                    //
+// Pipewire audio adapted from:                                                                       //
+// https://www.reddit.com/r/swaywm/comments/sks343/pwvolume_pipewire_volume_control_and_waybar_module //
+//====================================================================================================//
+
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "spacing": 4,
+    "margin-top": 0,
+    "margin-bottom": 0,
+
+    // Choose the order of the modules
+    "modules-center": ["sway/workspaces", "tray"],
+    "modules-left": ["custom/hostname"],
+    "modules-right": [ "custom/audio","memory","cpu","network","battery","clock"],
+
+    // Configuration for individual modules
+     "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": false,
+         "format": "{name}",
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10,
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "Mem {}% "
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": "CPU {usage:2}%"
+    },
+
+    "clock": {
+        "timezone": "America/Detroit",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}",
+    },
+
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15,
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "⚡{capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""],
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": "Connected  ",
+        "tooltip-format": "{ifname}: {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-right": "gnome-control-center wifi",
+    },
+
+    "custom/audio": {
+        "format": "{}",
+        "signal": 8,
+        "interval": "once",
+        "exec": "/home/grnch/.config/sway/audio.sh",
+        "on-click": "pavucontrol",
+    },
+
+    "custom/hostname": {
+        "format": "{}",
+        "exec": "/usr/bin/hostname -f",
+        "interval": "once",
+        "on-click": " /usr/bin/alacritty -e /usr/bin/htop",
+    },
+}
