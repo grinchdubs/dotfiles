@@ -280,7 +280,7 @@ mode "$screenshot" {
     bindsym $mod+Print mode "default"
 }
 
-bindsym Print mode "$screenshot"
+bindsym Print exec grim
 
 #======#
 # Misc #
