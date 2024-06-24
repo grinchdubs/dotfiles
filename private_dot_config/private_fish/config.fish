@@ -7,5 +7,6 @@ set PATH $PATH /home/grnch/.local/bin
 zoxide init --cmd cd fish | source
 alias ls=eza
 alias cat=batcat
+alias bat=batcat
 alias cdz='zoxide query --interactive'
-atuin init fish | source
+atuin init --diable-ctrl-r fish | source
