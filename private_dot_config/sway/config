@@ -241,7 +241,7 @@ set $menu wofi --show drun  -i | xargs swaymsg exec --
 bindsym $mod+b exec firefox
 
 # Open a file manager:
-bindsym ctrl+$mod+f exec dolphin
+bindsym ctrl+$mod+d exec dolphin
 
 # Open a sublime:
 bindsym $mod+z exec subl

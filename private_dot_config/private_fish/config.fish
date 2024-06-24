@@ -8,3 +8,4 @@ zoxide init --cmd cd fish | source
 alias ls=eza
 alias cat=batcat
 alias cdz='zoxide query --interactive'
+atuin init fish | source

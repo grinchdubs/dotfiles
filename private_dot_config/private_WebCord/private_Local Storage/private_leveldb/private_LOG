@@ -1,6 +1,0 @@
-2024/06/17-22:15:18.926 4125 Reusing MANIFEST /home/grnch/.config/WebCord/Local Storage/leveldb/MANIFEST-000001
-2024/06/17-22:15:19.106 4125 Recovering log #3
-2024/06/17-22:15:19.153 4125 Reusing old log /home/grnch/.config/WebCord/Local Storage/leveldb/000003.log 
-2024/06/17-22:19:51.360 4125 Level-0 table #5: started
-2024/06/17-22:19:51.376 4125 Level-0 table #5: 40445 bytes OK
-2024/06/17-22:19:51.383 4125 Delete type=0 #3
