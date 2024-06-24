@@ -9,4 +9,4 @@ alias ls=eza
 alias cat=batcat
 alias bat=batcat
 alias cdz='zoxide query --interactive'
-atuin init --diable-ctrl-r fish | source
+atuin init --disable-ctrl-r fish | source
