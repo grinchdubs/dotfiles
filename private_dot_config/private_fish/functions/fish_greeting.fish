@@ -1,3 +1,3 @@
 function fish_greeting
-echo uConsole sessiom powered by GRNCH
+echo uConsole session powered by GRNCH
 end
