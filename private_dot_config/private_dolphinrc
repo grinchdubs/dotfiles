@@ -1,3 +1,5 @@
+MenuBar=Disabled
+
 [$Version]
 update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
 
@@ -10,8 +12,8 @@ Places Icons Auto-resize=false
 Places Icons Static Size=22
 
 [KPropertiesDialog]
-1280x720 screen: Height=689
-1280x720 screen: Width=522
+1280x720 screen: Height=523
+1280x720 screen: Width=520
 
 [MainWindow]
 MenuBar=Disabled
