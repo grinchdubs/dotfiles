@@ -43,6 +43,11 @@ default_border pixel 2
 # Set the Wallpaper:
 output * bg $HOME/.config/sway/3ds2.jpg fill
 
+# Set window opacity
+set $opacity 0.85
+for_window [class=".*"] opacity $opacity
+for_window [app_id=".*"] opacity $opacity
+
 #====================================#
 # Activate the panel                 #
 #====================================#
