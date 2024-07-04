@@ -266,7 +266,7 @@ bindsym $mod+d exec .config/rofi/launchers/launcher.sh
 
 # Keyboard binding help
 # %%hotkey: K help  %%
-bindsym $mod+Shift+h exec /home/grnch/dmenu-hotkeys/bin/dmenu_hotkeys run --menu rofi --app i3
+bindsym $mod+Shift+h exec ~/.config/waybar/scripts/keyhint.sh
 
 #===============#
 # Screen capture#

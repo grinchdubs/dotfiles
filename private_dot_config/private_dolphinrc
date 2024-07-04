@@ -3,18 +3,33 @@ MenuBar=Disabled
 [$Version]
 update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
 
+[CompactMode]
+UseSystemFont=false
+ViewFont=FiraMono Nerd Font Mono,12,-1,5,50,0,0,0,0,0
+
+[DetailsMode]
+UseSystemFont=false
+ViewFont=FiraMono Nerd Font Mono,12,-1,5,50,0,0,0,0,0
+
 [General]
 Version=202
 ViewPropsTimestamp=2024,6,17,23,29,51.293
+
+[IconsMode]
+UseSystemFont=false
+ViewFont=FiraMono Nerd Font Mono,12,-1,5,50,0,0,0,0,0
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
 Places Icons Static Size=22
 
 [KPropertiesDialog]
-1280x720 screen: Height=523
-1280x720 screen: Width=520
+1280x720 screen: Height=491
+1280x720 screen: Width=492
 
 [MainWindow]
 MenuBar=Disabled
 ToolBarsMovable=Disabled
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs

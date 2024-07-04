@@ -1,5 +1,5 @@
 * {
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: Firacode, sans-serif;
     font-size: 14px;
     min-height: 0;
     padding-bottom: 2px;
@@ -8,13 +8,13 @@
 
 #battery {
     background: transparent;
-    color: #ffffff;
+    color: #bada55;
     opacity: 0.7;
     padding: 2px 8px;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
+    color: #bada55;
     padding: 2px 8px;
 }
 
@@ -30,14 +30,14 @@
 
 #clock {
     background: #1f1f1f;
-    color: #ffffff;
+    color: #bada55;
     margin-right: 4px;
     padding: 2px 8px;
 }
 
 #network {
     background: transparent;
-    color: #ffffff;
+    color: #bada55;
     opacity: 0.7;
     padding: 2px 8px;
 }
@@ -49,24 +49,25 @@
 
 #tray {
     background: #1f1f1f;
-    color: #ffffff;
+    color: #bada55;
     margin-left: 18px;
 }
 
 #tray > .passive {
     -gtk-icon-effect: dim;
     background: #1f1f1f;
-    color: #ffffff;
+    color: #bada55;
 }
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background: #1f1f1f;
-    color: #ffffff;
+    color: #bada55;
 }
 
 window#waybar {
-    background: transparent;
+    background: #000000;
+    opacity: 0.7;
     border-bottom: 1px solid #332b2b;
     transition-duration: .2s;
     transition-property: background-color;
@@ -75,14 +76,14 @@ window#waybar {
 #workspaces button:hover {
     /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
     background: @background;
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 1px solid #bada55;
     box-shadow: inherit;
-    color: #ffffff;
+    color: #bada55;
 }
 
 #workspaces button {
     background: transparent;
-    color: #ffffff;
+    color: #bada55;
     margin-left: 2px;
     margin-right: 2px;
     opacity: 0.7;
@@ -90,7 +91,7 @@ window#waybar {
 
 #workspaces button.focused {
     background: #453e3d;
-    color: #ffffff;
+    color: #bada55;
     opacity: 0.8;
 }
 
@@ -102,14 +103,68 @@ window#waybar {
 /* Custom Stuff */
 #custom-audio {
     background: transparent;
-    color: #ffffff;
+    color: #bada55;
     opacity: 0.7;
     padding: 2px 8px;
 }
 
 #custom-hostname {
     background: transparent;
-    color: #ffffff;
+    color: #bada55;
     padding: 2px 8px;
+    opacity: 0.7;
+}
+
+#custom-poweroff {
+    background: transparent;
+    color: #bada55;
+    opacity: 0.7;
+}
+
+#memory {
+    background: transparent;
+    color: #bada55;
+    opacity: 0.7;
+}
+
+#cpu {
+    background: transparent;
+    color: #bada55;
+    opacity: 0.7;
+}
+
+#temperature {
+    background: transparent;
+    color: #bada55;
+    opacity: 0.7;
+}
+
+#backlight {
+    background: transparent;
+    color: #bada55;
+    opacity: 0.7;
+}
+
+#custom-keyboard_layout {
+    background: transparent;
+    color: #bada55;
+    opacity: 0.7;
+}
+
+#custom-network_traffic {
+    background: transparent;
+    color: #bada55;
+    opacity: 0.7;
+}
+
+#bluetooth {
+    background: transparent;
+    color: #bada55;
+    opacity: 0.7;
+}
+
+#disk {
+    background: transparent;
+    color: #bada55;
     opacity: 0.7;
 }

@@ -27,7 +27,7 @@
         // Choose the order of the modules
         "modules-center": ["sway/window"],
         "modules-left": [ "custom/audio","memory","cpu","disk","temperature","backlight","network"],
-        "modules-right": [ "bluetooth","battery","clock", "custom/poweroff"],
+        "modules-right": [ "custom/keyboard_layout","custom/network_traffic","bluetooth","battery","clock","custom/poweroff"],
 
         // Configuration for individual modules
          "sway/window": {
@@ -90,7 +90,7 @@
         "bluetooth": {
             "format": "",
             "format-disabled": "NO",
-            "format-off": "NO",
+            "format-off": "OFF",
             "format-connected": "",
             "format-connected-battery": "󰂱 {device_battery_percentage}󰏰",
             "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
@@ -130,6 +130,17 @@
             "tooltip": false,
             "format": "",
             "on-click": "bash $HOME/.config/waybar/scripts/poweroff.sh"
+        },
+
+        "custom/network_traffic": {
+             "exec": "~/.config/waybar/scripts/network_traffic.sh",
+             "return-type": "json",
+             "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",    // optional
+        },
+
+        "custom/keyboard_layout": {
+            "format": " Cheat ", // Icon: keyboard
+            "on-click": "~/.config/waybar/scripts/keyhint.sh",
         },
 
         "custom/hostname": {
